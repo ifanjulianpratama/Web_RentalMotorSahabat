@@ -1,0 +1,242 @@
+.ifan_filter_bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ifan_filter_btn {
+  border: 1px solid var(--ifan_border);
+  background-color: var(--ifan_card);
+  color: var(--ifan_text);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ifan_filter_btn.ifan_active {
+  background-color: var(--ifan_navy);
+  color: var(--ifan_gold);
+  border-color: var(--ifan_navy);
+}
+
+.ifan_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 16px;
+}
+
+.ifan_card {
+  background-color: var(--ifan_card);
+  border: 1px solid var(--ifan_border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ifan_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.ifan_card_static {
+  cursor: default;
+}
+
+.ifan_img_box {
+  background-color: #ffffff;
+  padding: 14px;
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--ifan_border);
+}
+
+.ifan_img_box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ifan_card_body {
+  padding: 14px;
+}
+
+.ifan_trans_badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ifan_trans_matic {
+  background-color: #e0f2fe;
+  color: var(--ifan_matic);
+}
+
+.ifan_trans_manual {
+  background-color: #fef3c7;
+  color: var(--ifan_manual);
+}
+
+.ifan_motor_name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ifan_navy);
+  margin-bottom: 2px;
+}
+
+.ifan_cc_text {
+  font-size: 0.8rem;
+  color: var(--ifan_muted);
+  margin-bottom: 8px;
+}
+
+.ifan_price_daily {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #dc2626;
+}
+
+.ifan_price_unit {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ifan_muted);
+}
+
+.ifan_price_sub {
+  font-size: 0.76rem;
+  color: var(--ifan_muted);
+  margin-top: 2px;
+}
+
+.ifan_promo_footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ifan_border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+#ifan_modal_overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 25, 44, 0.65);
+  z-index: 1200;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#ifan_modal_overlay.ifan_open {
+  display: flex;
+}
+
+.ifan_modal_card {
+  background-color: var(--ifan_card);
+  border-radius: 14px;
+  max-width: 680px;
+  width: 100%;
+  padding: 22px;
+  position: relative;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+.ifan_close_modal {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: #f1f5f9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ifan_modal_grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.ifan_modal_img_box {
+  height: 210px;
+  border-radius: 10px;
+  border: 1px solid var(--ifan_border);
+  border-bottom: 1px solid var(--ifan_border);
+}
+
+.ifan_modal_title {
+  font-size: 1.35rem;
+  color: var(--ifan_navy);
+}
+
+.ifan_modal_spec {
+  font-size: 0.85rem;
+  color: var(--ifan_muted);
+  margin-bottom: 10px;
+}
+
+.ifan_modal_label {
+  font-size: 0.86rem;
+}
+
+.ifan_modal_subtotal_row {
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+.ifan_modal_subtotal_val {
+  color: #dc2626;
+  font-size: 1.1rem;
+}
+
+.ifan_paket_group {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.ifan_paket_opt {
+  flex: 1;
+  border: 1.5px solid var(--ifan_border);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.ifan_paket_opt.ifan_selected {
+  border-color: var(--ifan_navy);
+  background-color: #fef9c3;
+  font-weight: 700;
+}
+
+.ifan_paket_opt small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ifan_muted);
+}
+
+@media screen and (max-width: 768px) {
+  .ifan_modal_grid {
+    grid-template-columns: 1fr;
+  }
+}

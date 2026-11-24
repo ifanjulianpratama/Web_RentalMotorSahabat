@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo &amp; Paket Hemat — Rental Motor Sahabat</title>
+  <link rel="stylesheet" href="../css/ifan_layout.css">
+  <link rel="stylesheet" href="../css/ifan_katalog.css">
+  <link rel="stylesheet" href="../css/ifan_form.css">
+</head>
+<body id="ifan_promo_page" class="ifan_body">
+
+  <header id="ifan_header">
+    <div class="ifan_nav_wrap">
+      <a href="../index.html" class="ifan_brand">
+        RENTAL MOTOR SAHABAT
+        <span>Buka 24 Jam • Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya</span>
+      </a>
+
+      <button type="button" class="ifan_burger" onclick="ifanToggleMenu()" aria-label="Menu">☰</button>
+
+      <ul id="ifan_nav_menu" class="ifan_menu">
+        <li><a href="ifan_beranda.html">Beranda</a></li>
+        <li><a href="ifan_armada.html">Armada</a></li>
+        <li><a href="ifan_syarat.html">Syarat</a></li>
+        <li><a href="ifan_promo.html" class="ifan_active">Promo</a></li>
+        <li><a href="ifan_tentang.html">Tentang</a></li>
+        <li><a href="ifan_checkout.html">Checkout</a></li>
+        <li><a href="ifan_kontak.html">Kontak</a></li>
+      </ul>
+
+      <a href="ifan_checkout.html" class="ifan_cart_btn">
+        Keranjang (<span class="ifan_cart_count">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main class="ifan_container">
+    <section id="ifan_promo" class="ifan_box">
+      <h1 class="ifan_section_title">5. Promo &amp; Paket Hemat</h1>
+      <div class="ifan_grid ifan_mt_14">
+        <div class="ifan_card ifan_card_static">
+          <div class="ifan_card_body">
+            <span class="ifan_trans_badge ifan_trans_matic">PAKET HARIAN</span>
+            <h3 class="ifan_motor_name">Harian Fleksibel</h3>
+            <p class="ifan_cc_text">Cocok untuk kuliah, urusan kota, dan jalan santai di Tasikmalaya.</p>
+            <div class="ifan_price_daily">Mulai Rp 60.000 <span class="ifan_price_unit">/ hari</span></div>
+            <div class="ifan_promo_footer">
+              <button type="button" class="ifan_btn_primary" onclick="ifanCheckoutPromo('Harian Fleksibel', 'harian', 1, 60000)">Checkout Promo</button>
+            </div>
+          </div>
+        </div>
+        <div class="ifan_card ifan_card_static">
+          <div class="ifan_card_body">
+            <span class="ifan_trans_badge ifan_trans_manual">PAKET MINGGUAN</span>
+            <h3 class="ifan_motor_name">Hemat 7 Hari</h3>
+            <p class="ifan_cc_text">Lebih irit dibanding sewa harian terpisah untuk kunjungan kerja atau liburan.</p>
+            <div class="ifan_price_daily">Mulai Rp 350.000 <span class="ifan_price_unit">/ minggu</span></div>
+            <div class="ifan_promo_footer">
+              <button type="button" class="ifan_btn_primary" onclick="ifanCheckoutPromo('Hemat 7 Hari', 'mingguan', 1, 350000)">Checkout Promo</button>
+            </div>
+          </div>
+        </div>
+        <div class="ifan_card ifan_card_static">
+          <div class="ifan_card_body">
+            <span class="ifan_trans_badge ifan_trans_matic">PAKET BULANAN</span>
+            <h3 class="ifan_motor_name">Langganan Bulanan</h3>
+            <p class="ifan_cc_text">Solusi mobilitas jangka panjang dengan harga paling hemat per harinya.</p>
+            <div class="ifan_price_daily">Mulai Rp 1.200.000 <span class="ifan_price_unit">/ bulan</span></div>
+            <div class="ifan_promo_footer">
+              <button type="button" class="ifan_btn_primary" onclick="ifanCheckoutPromo('Langganan Bulanan', 'bulanan', 1, 1200000)">Checkout Promo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ifan_footer">
+    <p>Web Rental Motor Sahabat by <strong>Ifan Julian Pratama</strong> 2503010070 Tugas UTS Pemrograman Web</p>
+  </footer>
+
+  <script src="../js/ifan_data.js"></script>
+  <script src="../js/ifan_katalog.js"></script>
+</body>
+</html>

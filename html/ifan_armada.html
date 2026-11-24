@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Armada Motor — Rental Motor Sahabat</title>
+  <link rel="stylesheet" href="../css/ifan_layout.css">
+  <link rel="stylesheet" href="../css/ifan_katalog.css">
+  <link rel="stylesheet" href="../css/ifan_form.css">
+</head>
+<body id="ifan_armada_page" class="ifan_body">
+
+  <header id="ifan_header">
+    <div class="ifan_nav_wrap">
+      <a href="../index.html" class="ifan_brand">
+        RENTAL MOTOR SAHABAT
+        <span>Buka 24 Jam • Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya</span>
+      </a>
+
+      <button type="button" class="ifan_burger" onclick="ifanToggleMenu()" aria-label="Menu">☰</button>
+
+      <ul id="ifan_nav_menu" class="ifan_menu">
+        <li><a href="ifan_beranda.html">Beranda</a></li>
+        <li><a href="ifan_armada.html" class="ifan_active">Armada</a></li>
+        <li><a href="ifan_syarat.html">Syarat</a></li>
+        <li><a href="ifan_promo.html">Promo</a></li>
+        <li><a href="ifan_tentang.html">Tentang</a></li>
+        <li><a href="ifan_checkout.html">Checkout</a></li>
+        <li><a href="ifan_kontak.html">Kontak</a></li>
+      </ul>
+
+      <a href="ifan_checkout.html" class="ifan_cart_btn">
+        Keranjang (<span class="ifan_cart_count">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main class="ifan_container">
+    <section id="ifan_armada" class="ifan_box">
+      <div class="ifan_section_head">
+        <h1 class="ifan_section_title">2. Armada Motor (Klik untuk Pilih Paket &amp; Durasi)</h1>
+      </div>
+
+      <div class="ifan_filter_bar">
+        <button type="button" class="ifan_filter_btn ifan_active" onclick="ifanFilterMotor('SEMUA', this)">Semua Unit</button>
+        <button type="button" class="ifan_filter_btn" onclick="ifanFilterMotor('MATIC', this)">Transmisi MATIC</button>
+        <button type="button" class="ifan_filter_btn" onclick="ifanFilterMotor('MANUAL', this)">Transmisi MANUAL</button>
+      </div>
+
+      <div id="ifan_katalog_grid" class="ifan_grid"></div>
+    </section>
+  </main>
+
+  <div id="ifan_modal_overlay" onclick="if(event.target===this)ifanTutupModal()">
+    <div class="ifan_modal_card">
+      <button type="button" class="ifan_close_modal" onclick="ifanTutupModal()" aria-label="Tutup">✕</button>
+      <div class="ifan_modal_grid">
+        <div class="ifan_img_box ifan_modal_img_box">
+          <img id="ifan_modal_img" src="" alt="">
+        </div>
+        <div>
+          <span id="ifan_modal_trans" class="ifan_trans_badge ifan_trans_matic">MATIC</span>
+          <h3 id="ifan_modal_nama" class="ifan_modal_title">Nama Motor</h3>
+          <p id="ifan_modal_spec" class="ifan_modal_spec"></p>
+
+          <strong class="ifan_modal_label">Pilih Paket Sewa:</strong>
+          <div class="ifan_paket_group">
+            <div class="ifan_paket_opt ifan_selected" data-paket="harian" onclick="ifanPilihPaket('harian')">
+              Harian
+              <small id="ifan_harga_harian">Rp 0</small>
+            </div>
+            <div class="ifan_paket_opt" data-paket="mingguan" onclick="ifanPilihPaket('mingguan')">
+              Mingguan
+              <small id="ifan_harga_mingguan">Rp 0</small>
+            </div>
+            <div class="ifan_paket_opt" data-paket="bulanan" onclick="ifanPilihPaket('bulanan')">
+              Bulanan
+              <small id="ifan_harga_bulanan">Rp 0</small>
+            </div>
+          </div>
+
+          <div class="ifan_form_group">
+            <label for="ifan_durasi_input">Jumlah Durasi (<span id="ifan_satuan_label">Hari</span>):</label>
+            <input type="number" id="ifan_durasi_input" class="ifan_input" min="1" value="1" oninput="ifanHitungSubtotalModal()">
+          </div>
+
+          <div class="ifan_modal_subtotal_row">
+            Subtotal Unit Ini: <strong id="ifan_modal_subtotal" class="ifan_modal_subtotal_val">Rp 0</strong>
+          </div>
+
+          <button type="button" class="ifan_btn_primary ifan_w_full" onclick="ifanTambahKeKeranjang()">
+            + Tambah ke Keranjang (Pilih Motor Lain)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="ifan_footer">
+    <p>Web Rental Motor Sahabat by <strong>Ifan Julian Pratama</strong> 2503010070 Tugas UTS Pemrograman Web</p>
+  </footer>
+
+  <script src="../js/ifan_data.js"></script>
+  <script src="../js/ifan_katalog.js"></script>
+</body>
+</html>

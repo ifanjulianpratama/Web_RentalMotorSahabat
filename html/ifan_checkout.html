@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Pesanan — Rental Motor Sahabat</title>
+  <link rel="stylesheet" href="../css/ifan_layout.css">
+  <link rel="stylesheet" href="../css/ifan_katalog.css">
+  <link rel="stylesheet" href="../css/ifan_form.css">
+</head>
+<body id="ifan_checkout_page" class="ifan_body">
+
+  <header id="ifan_header">
+    <div class="ifan_nav_wrap">
+      <a href="../index.html" class="ifan_brand">
+        RENTAL MOTOR SAHABAT
+        <span>Buka 24 Jam • Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya</span>
+      </a>
+
+      <button type="button" class="ifan_burger" onclick="ifanToggleMenu()" aria-label="Menu">☰</button>
+
+      <ul id="ifan_nav_menu" class="ifan_menu">
+        <li><a href="ifan_beranda.html">Beranda</a></li>
+        <li><a href="ifan_armada.html">Armada</a></li>
+        <li><a href="ifan_syarat.html">Syarat</a></li>
+        <li><a href="ifan_promo.html">Promo</a></li>
+        <li><a href="ifan_tentang.html">Tentang</a></li>
+        <li><a href="ifan_checkout.html" class="ifan_active">Checkout</a></li>
+        <li><a href="ifan_kontak.html">Kontak</a></li>
+      </ul>
+
+      <a href="ifan_checkout.html" class="ifan_cart_btn">
+        Keranjang (<span class="ifan_cart_count">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main class="ifan_container">
+    <section id="ifan_checkout" class="ifan_box">
+      <h1 class="ifan_section_title">Keranjang &amp; Checkout Pesanan</h1>
+      <p class="ifan_muted_note ifan_mb_14">
+        Periksa unit di keranjang sebelum mengisi data. Setelah checkout dikirim, keranjang otomatis kosong dan pesanan tercatat di riwayat.
+      </p>
+
+      <div id="ifan_cart_items"></div>
+
+      <div class="ifan_total_bar ifan_mb_14">
+        <div>
+          <span class="ifan_total_label">Total Estimasi Sewa:</span>
+          <div id="ifan_cart_total" class="ifan_total_amount">Rp 0</div>
+        </div>
+        <a href="ifan_armada.html" class="ifan_btn_primary">+ Tambah Unit Motor</a>
+      </div>
+
+      <form onsubmit="ifanKirimCheckout(event)">
+        <div class="ifan_form_group">
+          <label for="ifan_nama_input">Nama Lengkap</label>
+          <input type="text" id="ifan_nama_input" class="ifan_input" placeholder="Masukkan nama lengkap Anda" required>
+        </div>
+
+        <div class="ifan_form_group">
+          <label for="ifan_wa_input">Nomor WhatsApp / Telepon</label>
+          <input type="text" id="ifan_wa_input" class="ifan_input" placeholder="Contoh: 081234567890" required>
+        </div>
+
+        <div class="ifan_form_group">
+          <label for="ifan_tgl_mulai">Tanggal Mulai Sewa</label>
+          <input type="date" id="ifan_tgl_mulai" class="ifan_input" required>
+        </div>
+
+        <div class="ifan_form_group">
+          <label for="ifan_cara_ambil">Pengambilan Unit</label>
+          <select id="ifan_cara_ambil" class="ifan_select" onchange="ifanTogglePengambilan()" required>
+            <option value="">-- Pilih Diambil ke Tempat atau Diantarkan --</option>
+            <option value="Diambil ke Tempat">Diambil ke Tempat</option>
+            <option value="Diantarkan ke Tempat Penyewa">Diantarkan ke Tempat Penyewa</option>
+          </select>
+
+          <div id="ifan_info_toko_box" class="ifan_info_toko" style="display:none;">
+            <strong>Alamat Toko Rental Motor Sahabat:</strong> Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya (Buka 24 Jam)
+          </div>
+        </div>
+
+        <div id="ifan_lokasi_antar_box" class="ifan_form_group" style="display:none;">
+          <label for="ifan_lokasi_antar_input">Lokasi Pengantaran Motor (Tempat Penyewa)</label>
+          <input type="text" id="ifan_lokasi_antar_input" class="ifan_input" placeholder="Tulis alamat lengkap / patokan lokasi di Tasikmalaya">
+        </div>
+
+        <div class="ifan_form_group">
+          <label for="ifan_metode_bayar">Metode Pembayaran</label>
+          <select id="ifan_metode_bayar" class="ifan_select" onchange="ifanToggleBankSelect()" required>
+            <option value="">-- Pilih Metode Pembayaran --</option>
+            <option value="Cash">Cash (Tunai)</option>
+            <option value="QRIS">QRIS</option>
+            <option value="Transfer Bank">Transfer Bank</option>
+          </select>
+        </div>
+
+        <div id="ifan_bank_group" class="ifan_form_group" style="display:none;">
+          <label for="ifan_bank_input">Pilih Bank Tujuan (Populer di Indonesia)</label>
+          <select id="ifan_bank_input" class="ifan_select">
+            <option value="">-- Pilih Bank --</option>
+            <option value="BRI">Bank BRI</option>
+            <option value="BCA">Bank BCA</option>
+            <option value="Mandiri">Bank Mandiri</option>
+            <option value="BNI">Bank BNI</option>
+            <option value="BSI">Bank BSI</option>
+          </select>
+        </div>
+
+        <div class="ifan_form_group">
+          <label for="ifan_pesan_input">Pesan / Catatan Tambahan (Opsional)</label>
+          <textarea id="ifan_pesan_input" rows="3" class="ifan_textarea" placeholder="Opsional: tulis catatan jam kedatangan, permintaan helm, atau pertanyaan lain..."></textarea>
+        </div>
+
+        <button type="submit" class="ifan_btn_primary">Checkout &amp; Simpan Pesanan</button>
+      </form>
+
+      <div class="ifan_riwayat_wrap">
+        <div class="ifan_riwayat_head">
+          <h3 class="ifan_riwayat_title">Riwayat Pemesanan</h3>
+          <button type="button" class="ifan_btn_danger_sm" onclick="ifanHapusSemuaRiwayat()">Hapus Semua</button>
+        </div>
+        <div id="ifan_riwayat_pesan"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ifan_footer">
+    <p>Web Rental Motor Sahabat by <strong>Ifan Julian Pratama</strong> 2503010070 Tugas UTS Pemrograman Web</p>
+  </footer>
+
+  <script src="../js/ifan_data.js"></script>
+  <script src="../js/ifan_keranjang.js"></script>
+  <script src="../js/ifan_checkout.js"></script>
+</body>
+</html>

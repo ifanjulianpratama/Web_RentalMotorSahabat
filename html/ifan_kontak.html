@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak &amp; Layanan 24 Jam — Rental Motor Sahabat</title>
+  <link rel="stylesheet" href="../css/ifan_layout.css">
+  <link rel="stylesheet" href="../css/ifan_katalog.css">
+  <link rel="stylesheet" href="../css/ifan_form.css">
+</head>
+<body id="ifan_kontak_page" class="ifan_body">
+
+  <header id="ifan_header">
+    <div class="ifan_nav_wrap">
+      <a href="../index.html" class="ifan_brand">
+        RENTAL MOTOR SAHABAT
+        <span>Buka 24 Jam • Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya</span>
+      </a>
+
+      <button type="button" class="ifan_burger" onclick="ifanToggleMenu()" aria-label="Menu">☰</button>
+
+      <ul id="ifan_nav_menu" class="ifan_menu">
+        <li><a href="ifan_beranda.html">Beranda</a></li>
+        <li><a href="ifan_armada.html">Armada</a></li>
+        <li><a href="ifan_syarat.html">Syarat</a></li>
+        <li><a href="ifan_promo.html">Promo</a></li>
+        <li><a href="ifan_tentang.html">Tentang</a></li>
+        <li><a href="ifan_checkout.html">Checkout</a></li>
+        <li><a href="ifan_kontak.html" class="ifan_active">Kontak</a></li>
+      </ul>
+
+      <a href="ifan_checkout.html" class="ifan_cart_btn">
+        Keranjang (<span class="ifan_cart_count">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main class="ifan_container">
+    <section id="ifan_kontak" class="ifan_box">
+      <h1 class="ifan_section_title">8. Kontak &amp; Layanan 24 Jam</h1>
+      <p class="ifan_kontak_intro">
+        Layanan <strong>Buka 24 Jam</strong>. Untuk info lebih lanjut bisa menghubungi admin di bawah ini, langsung datang ke tempat, atau kirim pesan langsung ke pemilik website.
+      </p>
+
+      <div class="ifan_kontak_grid">
+        <div class="ifan_kontak_card">
+          <h3>Admin 1</h3>
+          <p class="ifan_admin_phone">0893456789</p>
+          <small class="ifan_admin_note">Siap melayani 24 Jam</small>
+        </div>
+
+        <div class="ifan_kontak_card">
+          <h3>Admin 2</h3>
+          <p class="ifan_admin_phone">087654321457</p>
+          <small class="ifan_admin_note">Siap melayani 24 Jam</small>
+        </div>
+
+        <div class="ifan_kontak_card">
+          <h3>Lokasi &amp; Jam Buka</h3>
+          <p class="ifan_lokasi_text">Jl. Cibereum Neglasari No. 24, Kota Tasikmalaya</p>
+          <small class="ifan_admin_note">Buka 24 Jam • Bisa langsung datang ke tempat</small>
+        </div>
+      </div>
+
+      <div class="ifan_kontak_form_box">
+        <h3 class="ifan_riwayat_title ifan_mb_14">Kirim Pesan kepada Pemilik Website</h3>
+        <form onsubmit="ifanKirimPesanKontak(event)">
+          <div class="ifan_form_group">
+            <label for="ifan_kontak_nama">Nama Pengirim</label>
+            <input type="text" id="ifan_kontak_nama" class="ifan_input" placeholder="Masukkan nama Anda" required>
+          </div>
+
+          <div class="ifan_form_group">
+            <label for="ifan_kontak_email">Email / No. WhatsApp</label>
+            <input type="text" id="ifan_kontak_email" class="ifan_input" placeholder="Contoh: nama@email.com atau 0812..." required>
+          </div>
+
+          <div class="ifan_form_group">
+            <label for="ifan_kontak_pesan">Isi Pesan</label>
+            <textarea id="ifan_kontak_pesan" rows="3" class="ifan_textarea" placeholder="Tulis pertanyaan, saran, atau pesan untuk pemilik Rental Motor Sahabat..." required></textarea>
+          </div>
+
+          <button type="submit" class="ifan_btn_primary">Kirim Pesan</button>
+        </form>
+        <div id="ifan_daftar_pesan_kontak" class="ifan_pesan_terkirim"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ifan_footer">
+    <p>Web Rental Motor Sahabat by <strong>Ifan Julian Pratama</strong> 2503010070 Tugas UTS Pemrograman Web</p>
+  </footer>
+
+  <script src="../js/ifan_data.js"></script>
+  <script src="../js/ifan_kontak.js"></script>
+</body>
+</html>
